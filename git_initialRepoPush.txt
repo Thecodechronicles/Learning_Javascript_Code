@@ -14,3 +14,7 @@ and perform a 'git checkout -b <branchName>' for you. So 'git branch -M master' 
 This command must be used when your local branch name is 'main' (some new git versions might change the default local branch name) 
 and you want to rename your 'main' branch to 'master'. This would also overwrite any existing branch with the same name as 'master' 
 (-M flag: --move --force)
+
+Note: '-u' flag in 'git push -u origin master' is short for '--set-upstream' flag. When push code for the first time to a new remote repo,
+your local branch must have a tracking remote branch. -u automatically sets tracking to a remote/master branch from local master branch.
+Thereafter, every ull and push from the current local branch will be tracking (in sync) the remote/branch  
