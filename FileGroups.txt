@@ -1,0 +1,89 @@
+Miscellaneous:
+microsoft-edge-beta=109.0.1518.49-1
+
+Javascript learning tabs:
+
+IndexHTML.html
+LearningCodeTwo.js
+
+
+Router Tabs: 
+
+React_App/expensify-app/public/index.html
+React_App/expensify-app/src/app.js
+React_App/expensify-app/src/routers/AppRouter.js
+React_App/expensify-app/src/components/UpperComponent.js
+React_App/expensify-app/node_modules/react-router-dom/es/Link.js
+React_App/expensify-app/node_modules/react-router-dom/es/NavLink.js
+React_App/expensify-app/public/scripts/playground/appOne.js
+React_App/expensify-app/webpack.config.js
+React_App/expensify-app/node_modules/react-router/es/Switch.js
+React_App/expensify-app/node_modules/react-router/es/Route.js
+React_App/expensify-app/node_modules/react-router/es/Router.js
+React_App/expensify-app/node_modules/react-router/es/MemoryRouter.js
+React_App/expensify-app/node_modules/react-router-dom/es/BrowserRouter.js
+React_App/expensify-app/package.json
+React_App/expensify-app/node_modules/react-router/es/matchPath.js
+
+
+Redux Tabs: 
+
+CodeTemp.js
+React_App/expensify-app/node_modules/redux/es/combineReducers.js
+React_App/expensify-app/node_modules/redux/es/createStore.js
+React_App/expensify-app/src/playground-files/appTwo.js
+
+
+
+
+24 Jan' 23
+
+IndexHTML.html
+LearningCodeTwo.js
+LearningCodeAnother.js
+LearningCode.js
+
+React_App/portfolio-site/public/index.html
+React_App/portfolio-site/src/routers/AppRouter.js
+React_App/portfolio-site/src/playground-files/appFive.js
+React_App/portfolio-site/public/scripts/playground/appFive.js
+React_App/portfolio-site/webpack.config.js
+React_App/portfolio-site/src/playground-files/appTwo.js
+
+React_App/portfolio-site/node_modules/react-router/es/Switch.js
+React_App/portfolio-site/node_modules/react-router/es/Router.js
+React_App/portfolio-site/node_modules/react-dom/index.js
+React_App/portfolio-site/node_modules/react-dom/cjs/react-dom.development.js
+
+
+
+
+5 march 2023
+
+Javascript learning tabs:
+
+IndexHTML.html
+LearningCodeAnother.js
+CodeTemp.js
+
+Portfolio tabs:
+
+React_App/portfolio-site/public/index.html
+React_App/portfolio-site/src/app.js
+
+Expensify React Redux Tabs:
+
+React_App/expensify-app/node_modules/react-redux/src/index.js
+React_App/expensify-app/node_modules/react-redux/src/components/Provider.js
+React_App/expensify-app/node_modules/react-redux/src/connect/connect.js
+React_App/expensify-app/node_modules/react-redux/src/connect/selectorFactory.js
+React_App/expensify-app/node_modules/react-redux/es/connect/connect.js
+React_App/expensify-app/node_modules/react/index.js
+React_App/expensify-app/node_modules/react/cjs/react.development.js
+React_App/expensify-app/node_modules/react-redux/es/components/connectAdvanced.js
+React_App/expensify-app/node_modules/react-redux/src/components/connectAdvanced.js
+React_App/expensify-app/src/components/ExpenseList.js
+React_App/expensify-app/src/components/ExpenseDashboardPage.js
+React_App/expensify-app/src/playground-files/appEleven.js
+React_App/expensify-app/src/store/configureStore.js
+React_App/expensify-app/src/app.js
