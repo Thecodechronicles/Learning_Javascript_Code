@@ -18,3 +18,10 @@ and you want to rename your 'main' branch to 'master'. This would also overwrite
 Note: '-u' flag in 'git push -u origin master' is short for '--set-upstream' flag. When you push code for the first time to a new remote repo,
 your local branch must have a tracking remote branch. -u automatically sets tracking to a remote/master branch from local master branch.
 Thereafter, every pull and push from the current local branch will be tracking (in sync) the remote/branch  
+
+Note: If pushing for the first time, you may have a 'Readme.md' file made on your remote repo(added by github on ask prompt) 
+non existent on your local repo. This 'Readme.md' may therefore cause conflict in 'pushing to remote from local' 
+as well as 'merging from remote to local' for the very first time. In this case you can use '--allow-unrelated-histories' 
+flag which woud work with 'git pull' command resolving the conflict of 'unrelated histories' error 
+Example usage: 'git pull origin branchname --allow-unrelated-histories'
+SideNote: First make a pull add remote repo file on your local and then make the push(without any flag)
