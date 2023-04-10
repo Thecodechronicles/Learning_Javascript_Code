@@ -79,6 +79,8 @@ function combination() {
 
 
 
+
+
 function Connect(props, context) { // In actuality it is 'Class Connect extends Component. inside of 'wrapWithConnect' // returned by connect()()
     _classCallCheck(this, Connect);
     var _this = _possibleConstructorReturn(this, _Component.call(this, props, context));
