@@ -34,3 +34,13 @@ Note: commit_hash is assumed to be the one of current branch. 'git log' logs out
 
 To merely move your current branch to a particular commit to view the branch state till that commit
 git checkout <commit_hash>
+
+git fetch --all
+git branch -r
+git checkout -b <local_branch_name> <origin/remote_branch_name>
+
+when on current branch with some uncommitted changes:
+git stash (from current branch, lets say: branch 1)
+git checkout <branch_name> ( lets say: branch 2 )
+git checkout <branch_name> (back to same branch: branch 1)
+git stash pop or git stash apply (to again apply the uncommited changes to the working directory that you saved by 'git stash')
