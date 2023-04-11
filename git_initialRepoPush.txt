@@ -23,5 +23,14 @@ Note: If pushing for the first time, you may have a 'Readme.md' file made on you
 non existent on your local repo. This 'Readme.md' may therefore cause conflict in 'pushing to remote from local' 
 as well as 'merging from remote to local' for the very first time. In this case you can use '--allow-unrelated-histories' 
 flag which woud work with 'git pull' command resolving the conflict of 'unrelated histories' error 
-Example usage: 'git pull origin branchname --allow-unrelated-histories'
+Example usage: 'git pull origin <branchname> --allow-unrelated-histories'
 SideNote: First make a pull add remote repo file on your local and then make the push(without any flag)
+
+To checkout to a new_branch and merge all the changes made till the particular commit_hash
+git checkout -b <new_branch> <commit_hash> 
+Or, To checkout to a new_branch and merge all the changes made till 4 commits back from HEAD(go back 4 commits from HEAD)
+git checkout -b new_branch HEAD~4
+Note: commit_hash is assumed to be the one of current branch. 'git log' logs out all the information of commits.
+
+To merely move your current branch to a particular commit to view the branch state till that commit
+git checkout <commit_hash>
