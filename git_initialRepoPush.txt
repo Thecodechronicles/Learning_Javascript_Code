@@ -30,7 +30,7 @@ To checkout to a new_branch and merge all the changes made till the particular c
 git checkout -b <new_branch> <commit_hash> 
 Or, To checkout to a new_branch and merge all the changes made till 4 commits back from HEAD(go back 4 commits from HEAD)
 git checkout -b new_branch HEAD~4
-Note: commit_hash is assumed to be the one of current branch. 'git log' logs out all the information of commits.
+Note: 'git log' logs out all the information of commits.
 
 To merely move your current branch to a particular commit to view the branch state till that commit
 git checkout <commit_hash>

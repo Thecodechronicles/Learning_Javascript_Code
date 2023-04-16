@@ -361,3 +361,86 @@ module.exports = {
     },
     ignoreWarnings: [/Failed to parse source map/],
 };
+
+
+
+
+
+
+[
+    {
+        loader: '/home/ankit/Code_Practice/VSCode_Code_Environment/VSCode_Workables/React_Workables/React_Practice_Projects/The Complete React Developer Course_ (w Hooks and Redux)_AndrewMead/React_App_Zone/React_App/expensify-app/node_modules/extract-text-webpack-plugin/dist/loader.js',
+        options: { omit: 0, remove: true }
+    },
+    { loader: 'css-loader' },
+    { loader: 'sass-loader' }
+]
+
+
+var a =
+{
+    filename: 'style.css',
+    id: 1,
+    options: {}
+}
+
+
+
+
+
+
+function serveStatic(req, res, next) {
+    if (req.method !== 'GET' && req.method !== 'HEAD') {
+        if (fallthrough) {
+            return next()
+        }
+
+        // method not allowed
+        res.statusCode = 405
+        res.setHeader('Allow', 'GET, HEAD')
+        res.setHeader('Content-Length', '0')
+        res.end()
+        return
+    }
+
+    var forwardError = !fallthrough
+    var originalUrl = parseUrl.original(req)
+    var path = parseUrl(req).pathname
+
+    // make sure redirect occurs at mount
+    if (path === '/' && originalUrl.pathname.substr(-1) !== '/') {
+        path = ''
+    }
+
+    // create send stream
+    var stream = send(req, path, opts)
+
+    // add directory handler
+    stream.on('directory', onDirectory)
+
+    // add headers listener
+    if (setHeaders) {
+        stream.on('headers', setHeaders)
+    }
+
+    // add file listener for fallthrough
+    if (fallthrough) {
+        stream.on('file', function onFile() {
+            // once file is determined, always forward error
+            forwardError = true
+        })
+    }
+
+    // forward errors
+    stream.on('error', function error(err) {
+        if (forwardError || !(err.statusCode < 500)) {
+            next(err)
+            return
+        }
+
+        next()
+    })
+
+    // pipe
+    stream.pipe(res)
+}
