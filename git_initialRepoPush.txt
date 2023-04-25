@@ -10,7 +10,7 @@ git push -u origin master
 Use 'touch .gitignore' after 'git init' to include files you want git to ignore before staging them.
 
 For first push in the remote repo, git automatically creates a local 'master' branch 
-and perform a 'git checkout -b <branchName>' for you. So 'git branch -M master' can be avoided. 
+by performing a 'git checkout -b <branchName>' for you. So 'git branch -M master' can be avoided. 
 This command must be used when your local branch name is 'main' (some new git versions might change the default local branch name) 
 and you want to rename your 'main' branch to 'master'. This would also overwrite any existing branch with the same name as 'master' 
 (-M flag: --move --force)

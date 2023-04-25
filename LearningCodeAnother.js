@@ -256,7 +256,7 @@ inputField[0].addEventListener('inputData', function (e) {
         // this.setAttribute('value', workingAmount + 'One');
         this.setAttribute('value', workingAmount);//Attribute 'Value'
         this.value = workingAmount; // Property 'Value'
-        // Almost everytime browser kees the two in sync but In form inputs those aren't automatically made in sync
+        // Almost everytime browser keeps the two in sync but In form inputs those aren't automatically made in sync
     }
 
     // if (!amount.toLowerCase().includes("h")) {

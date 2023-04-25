@@ -222,3 +222,39 @@ const pluginObject = new ExtractTextWebpackPlugin('style.css');
 
 // console.log('ExtractTextWebpackPlugin_extract() : ', pluginObject.extract({ use: ['css-loader', 'sass-loader'] }));
 console.log('pluginObject : ', pluginObject);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var ReactCurrentDispatcher$1 = ReactSharedInternals.ReactCurrentDispatcher;
+
+
+function useState(initialState) {
+    var dispatcher = resolveDispatcher();
+    return dispatcher.useState(initialState);
+}
+
+var abc = {
+    useState: function (initialState) {
+        currentHookNameInDev = 'useState';
+        mountHookTypesDev();
+        var prevDispatcher = ReactCurrentDispatcher$1.current;
+        ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnMountInDEV;
+
+        try {
+            return mountState(initialState);
+        } finally {
+            ReactCurrentDispatcher$1.current = prevDispatcher;
+        }
+    }
+}
