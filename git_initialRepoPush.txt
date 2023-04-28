@@ -35,6 +35,7 @@ Note: 'git log' logs out all the information of commits.
 To merely move your current branch to a particular commit to view the branch state till that commit
 git checkout <commit_hash>
 
+To checkout new local branch tracking a new remote branch after 'git fetch --all': 
 git fetch --all
 git branch -r
 git checkout -b <local_branch_name> <origin/remote_branch_name>
@@ -44,3 +45,19 @@ git stash (from current branch, lets say: branch 1)
 git checkout <branch_name> ( lets say: branch 2 )
 git checkout <branch_name> (back to same branch: branch 1)
 git stash pop or git stash apply (to again apply the uncommited changes to the working directory that you saved by 'git stash')
+
+To see differences between two branches:
+git diff <branchName/commitHash> <branchName/commitHash> Or
+git diff <branchName/commitHash> <branchName/commitHash> <filename> (for a specific filename)
+git diff HEAD <file_name>
+git diff <remote-origin/branchName> (when on current branch and required to see difference with remote-branch; 
+                                     probably after using 'git fetch --all')
+
+To change a previous commit:
+git rebase -i <commitHash>^ 
+nano editor will appear edit the file sush as: replase 'pick' to 'edit' the commits you want to edit and 
+save the file in nano editor
+make the changes then, do this: git add ., git commit --amend
+when satisfy with your changes do this: git rebase --continue
+Git will replay the subsequent changes on top of your modified commit. You may be asked to fix some merge conflicts. 
+(i.e there will be changes in the working tree, take assistance of gitlens to know better)

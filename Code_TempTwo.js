@@ -225,6 +225,41 @@ console.log('pluginObject : ', pluginObject);
 
 
 
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+
+const ETW_Instance = new ExtractTextWebpackPlugin('style.css');
+const ETWInstance_Extract = ETW_Instance.extract({
+    use: [
+        {
+            loader: 'css-loader',
+            options: {
+                sourceMap: true
+            }
+        },
+        {
+            loader: 'sass-loader',
+            options: {
+                sourceMap: true
+            }
+        }
+    ]
+});
+
+// Output of above code starting at line no. 228
+// ETWInstance_Extract: [
+//     {
+//         loader: '/home/ankit/Code_Practice/VSCode_Code_Environment/VSCode_Workables/React_Workables/React_Practice_Projects/The_Complete_React_Developer_Course_wHooks_and_Redux_AndrewMead/React_AM_App_Zone/React_App/expensify-app/node_modules/extract-text-webpack-plugin/dist/loader.js',
+//         options: { id: 1, omit: 0, remove: true }
+//     },
+//     { loader: 'css-loader', options: { sourceMap: true } },
+//     { loader: 'sass-loader', options: { sourceMap: true } }
+// ]
+
+// ETW_Instance:  ExtractTextPlugin { filename: 'style.css', id: 1, options: {} }
+
+
+
+
 
 
 
