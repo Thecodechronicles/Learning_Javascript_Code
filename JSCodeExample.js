@@ -22,13 +22,13 @@
 
 
 
-function doSomething() {
-    this.name2 = 'John';
-    return 'random';
-}
+// function doSomething() {
+//     this.name2 = 'John';
+//     return 'random';
+// }
 
-doSomething.ABC = 'ABC';
-console.log(doSomething.ABC);
+// doSomething.ABC = 'ABC';
+// console.log(doSomething.ABC);
 
 
 
@@ -94,3 +94,42 @@ console.log(doSomething.ABC);
 // // }
 // 
 // ElementJs.onglicky();
+
+
+var abc = {
+    ijk: 'vyu',
+    get pqr() {
+        return this.ijk;
+    }
+}
+
+console.log(abc.pqr);
+
+
+function mno() {
+    this.abc = 'uvw';
+}
+
+mno.prototype = {
+    get pqr() {
+        return this.abc;
+    }
+}
+
+console.log(new mno().pqr);
+
+
+class lmn {
+    constructor() {
+        this.ghi = 'ugj';
+    }
+
+    get pqr() { // It is equivalent to a function prototype
+        return this.ghi;
+    }
+}
+
+console.log(new lmn().pqr);
+
+// getter and setter can't be defined inside a function, It can only be defined inside an object.....
+//.....Since, prototype of a function is also an object it can be defined inside a prototype object as well 
