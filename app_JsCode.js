@@ -48,3 +48,10 @@ function abc() {
 }
 // abc()();
 // console.log(b);
+
+
+function ijk() {
+
+}
+
+ijk.prototype.lmn = 'Hello !!';
