@@ -10,7 +10,7 @@
       "request": "attach",
       "type": "msedge",
       "webRoot": "${workspaceFolder}",
-      "url": "http://127.0.0.1:5501/IndexHTML.html"
+      // "url": "http://127.0.0.1:5501/IndexHTML.html"
     }
   ]
 }
