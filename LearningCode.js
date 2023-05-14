@@ -301,7 +301,8 @@ function nhg(params) {
 // nhg.prototype.constructor = nhg; // be used in conjunction with each other
 nhg.prototype.__proto__ = ujm.prototype;
 
-nhg.__proto__ = ujm;
+nhg.__proto__ = ujm; // for static inheritence (static inheritence seems to be taking place here in JS 
+// in contrast to other object-oriented languages)
 
 // if (nhg.prototype.isComponent) {  // Testing something for React
 //     new nhg('Hello hai !!').render();
