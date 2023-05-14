@@ -61,3 +61,7 @@ make the changes then, do this: git add ., git commit --amend
 when satisfy with your changes do this: git rebase --continue
 Git will replay the subsequent changes on top of your modified commit. You may be asked to fix some merge conflicts. 
 (i.e there will be changes in the working tree, take assistance of gitlens to know better)
+
+
+To create a tag for a git commit:
+git tag -a [tag_name] [commit_SHA] -m "Notes about the tag"
