@@ -239,7 +239,7 @@ inputField[0].addEventListener('inputData', function (e) {
     // var amount = "";
     console.log("amount is: ", workingAmount);
 
-    // code assumed inside of react handler: an event object is made and workinAmount value thrown into it as e.target.value
+    // code assumed inside of react handler: an event object is made and workingAmount value thrown into it as e.target.value
     // imagine workingAmount in this if block as e.target.value
     if (workingAmount.toLowerCase().includes('h')) {
         console.log("this value: ", this.value);

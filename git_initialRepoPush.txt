@@ -64,4 +64,7 @@ Git will replay the subsequent changes on top of your modified commit. You may b
 
 
 To create a tag for a git commit:
-git tag -a [tag_name] [commit_SHA] -m "Notes about the tag"
+git tag -a [tag_name] [commit_SHA] -m "Notes about the tag" (Read more about lightweight tags and annotated tags)
+
+To undo recent commit changes:
+git reset HEAD~

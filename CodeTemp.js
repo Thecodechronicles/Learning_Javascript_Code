@@ -445,3 +445,54 @@ function serveStatic(req, res, next) {
     // pipe
     stream.pipe(res)
 }
+
+
+
+
+
+var save_Function = function (options, fn) { // variable name 'save_Function' defined by me
+    let parallelSave;
+    this.$op = 'save';
+
+    if (this.$__.saving) {
+        parallelSave = new ParallelSaveError(this);
+    } else {
+        this.$__.saving = new ParallelSaveError(this);
+    }
+
+    if (typeof options === 'function') {
+        fn = options;
+        options = undefined;
+    }
+
+    options = new SaveOptions(options);
+    if (options.hasOwnProperty('session')) {
+        this.$session(options.session);
+    }
+    this.$__.$versionError = generateVersionError(this, this.modifiedPaths());
+
+    fn = this.constructor.$handleCallbackError(fn);
+    return this.constructor.db.base._promiseOrCallback(fn, cb => {
+        cb = this.constructor.$wrapCallback(cb);
+
+        if (parallelSave) {
+            this.$__handleReject(parallelSave);
+            return cb(parallelSave);
+        }
+
+        this.$__.saveOptions = options;
+
+        this.$__save(options, error => {
+            this.$__.saving = null;
+            this.$__.saveOptions = null;
+            this.$__.$versionError = null;
+            this.$op = null;
+
+            if (error) {
+                this.$__handleReject(error);
+                return cb(error);
+            }
+            cb(null, this);
+        });
+    }, this.constructor.events);
+}
