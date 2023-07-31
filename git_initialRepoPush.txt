@@ -71,4 +71,5 @@ git reset HEAD~
 
 To restore changes done by undoing commits eg: 'git reset HEAD~' 
 git reflog
-git reset --hard <sha1 of desired commit>
+git reset --hard <sha1 of desired commit>  
+Note: careful with the above 'reset --hard' command as it may delete your local changes irrecoverably if not stashed

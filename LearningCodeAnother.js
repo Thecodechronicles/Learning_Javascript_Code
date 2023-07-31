@@ -254,8 +254,13 @@ inputField[0].addEventListener('inputData', function (e) {
     else {
         // amount = workingAmount;
         // this.setAttribute('value', workingAmount + 'One');
-        this.setAttribute('value', workingAmount);//Attribute 'Value'
+
+        this.setAttribute('value', workingAmount); //Attribute 'Value' 
+        // OR // eventObject.target.setAttribute('value', workingAmount);
+
         this.value = workingAmount; // Property 'Value'
+        // OR // eventObject.target.value = workingAmount;
+
         // Almost everytime browser keeps the two in sync but In form inputs those aren't automatically made in sync
     }
 
