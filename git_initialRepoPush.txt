@@ -27,6 +27,10 @@ flag which woud work with 'git pull' command resolving the conflict of 'unrelate
 Example usage: 'git pull origin <branchname> --allow-unrelated-histories'
 SideNote: First make a pull, 'git add' remote repo file on your local machine and then make the push(without any flag)
 
+For merging a branch 'A' with branch 'B' or current branch:
+git checkout <branchB/currentBranch>
+git merge <branchA>
+
 To checkout to a new_branch and merge all the changes made till the particular commit_hash
 git checkout -b <new_branch> <commit_hash> 
 Or, To checkout to a new_branch and merge all the changes made till 4 commits back from HEAD(go back 4 commits from HEAD)
@@ -53,6 +57,18 @@ git diff <branchName/commitHash> <branchName/commitHash> <filename> (for a speci
 git diff HEAD <file_name>
 git diff <remote-origin/branchName> (when on current branch and required to see difference with remote-branch; 
                                      probably after using 'git fetch --all')
+
+To see differences in vscode, first make these changes in ~/.gitignore file like this, below:
+=====================================================
+[user]
+	name = Ankit Mittal
+	email = ankitmittal524@gmail.com
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+=====================================================
+and then, use 'git difftool <branchName/commitHash> <branchName/commitHash> <filename>'                                     
 
 To change a previous commit:
 git rebase -i <commitHash>^ 
