@@ -222,7 +222,17 @@ inputField[0].addEventListener('keypress', function (e) {
     // const key = e.key;
     // keypressEvent = e;
     e.preventDefault(); // react will put this event listener at the root and only put e.preventDefault here if react component has a 'value' prop. Otherwise, react assumes since you don't want to change any value and hence, you don't want to control it's behaviour.. so, why it should prevent default behaviour from taking place. In that case e.preventDefault won't be put here and default behaviour would continue to take place normally
-    this.dispatchEvent(new CustomEvent('inputData', { detail: e }));
+
+    try {  // adding try catch here is a futile attempt.. read below note, it behaves synchronously but still, exceptions do not..... 
+        // .....propagate to the caller
+        var returnValue = this.dispatchEvent(new CustomEvent('inputData', { detail: e }));
+        // Note: Exceptions thrown by event handlers are reported as uncaught exceptions. The event handlers run on a nested.....
+        // .....callstack; they block the caller until they complete, but exceptions do not propagate to the caller.
+        // ref: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent
+        console.log('logged here !', returnValue);
+    } catch (e) {
+        console.log('caught: ', e)
+    }
     // }
 })
 
@@ -263,6 +273,7 @@ inputField[0].addEventListener('inputData', function (e) {
 
         // Almost everytime browser keeps the two in sync but In form inputs those aren't automatically made in sync
     }
+    // throw Error('There is an error !')
 
     // if (!amount.toLowerCase().includes("h")) {
     //     console.log("this value: ", this.value);

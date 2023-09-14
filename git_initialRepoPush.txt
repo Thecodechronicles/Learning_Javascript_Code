@@ -70,6 +70,7 @@ To see differences in vscode, first make these changes in ~/.gitignore file like
 =====================================================
 and then, use 'git difftool <branchName/commitHash> <branchName/commitHash> <filename>'                                     
 
+
 To change a previous commit:
 git rebase -i <commitHash>^ 
 nano editor will appear edit the file sush as: replase 'pick' to 'edit' the commits you want to edit and 
