@@ -297,8 +297,8 @@ function nhg(params) {
     console.log(params);
 }
 
-// nhg.prototype = Object.create(ujm.prototype); // These (this and the one below) two statements have to
-// nhg.prototype.constructor = nhg; // be used in conjunction with each other
+// nhg.prototype = Object.create(ujm.prototype); // These (this and the one below) two statements have to.....
+// nhg.prototype.constructor = nhg; // .....be used in conjunction with each other
 nhg.prototype.__proto__ = ujm.prototype;
 
 nhg.__proto__ = ujm; // for static inheritence (static inheritence seems to be taking place here in JS 

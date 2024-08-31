@@ -27,6 +27,30 @@ flag which woud work with 'git pull' command resolving the conflict of 'unrelate
 Example usage: 'git pull origin <branchname> --allow-unrelated-histories'
 SideNote: First make a pull, 'git add' remote repo file on your local machine and then make the push(without any flag)
 
+To change remote url for your current git repo:
+git remote set-url origin <new-git-url> (usually require whwn changing from https url to ssh url)
+
+To generate new ssh key for your system:
+ssh-keygen -t ed25519 -C "<your-email>" (ed25519 is the name of ssh algorithm, another ssh algorithm is 'rsa')
+
+For legacy old systems, generate ssh keys using rsa algorithm:
+ssh-keygen -t rsa -b 4096 -C "<your-email>"
+
+To see the actual ssh key of your system:
+cat ~/.ssh/id_ed25519.pub
+
+To check for an existing ssh key n your system:
+ls -al ~/.ssh
+
+To add new ssh key to ssh-agent:
+eval "$(ssh-agent -s)"  (it starts running an ssh-agent)
+ssh-add ~/.ssh/id_ed25519
+
+Note: The ssh-agent is another program that is part of the SSH toolsuite. The ssh-agent is responsible for holding private keys. Think of it like a keychain. In addition to holding private keys it also brokers requests to sign SSH requests with the private keys so that private keys are never passed around unsecurly.
+
+To add ssh key to your github account:
+Go to 'settings' --> 'SSH and GPG Keys' --> press 'New SSH Key'
+
 For merging a branch 'A' with branch 'B' or current branch:
 git checkout <branchB/currentBranch>
 git merge <branchA>

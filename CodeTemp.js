@@ -81,6 +81,46 @@ function combination() {
 
 
 
+
+function createThunkMiddleware(extraArgument) {
+    return ({ dispatch, getState }) => next => action => {
+        if (typeof action === 'function') {
+            return action(dispatch, getState, extraArgument);
+        }
+        return next(action);
+    };
+}
+
+const thunk = createThunkMiddleware();
+thunk.withExtraArgument = createThunkMiddleware;
+
+export default thunk;
+
+
+
+
+function anotherDispatch(action) {  // thunk dispatch, usage: dispatch(function())
+    if (typeof action === 'function') {
+        return action(  // callback inside thunk dispatch
+            dispatch, // wrapper dispatch of applyMiddleware which wraps.....
+            // .....thunk dispatch(this thunk dispatch) only, usage: dispatch({type:''. property:''})
+            getState,
+            extraArgument
+        );
+    }
+    return next(action); // original_dispatch of store i.e store.dispatch
+}
+
+// Note: 'anotherDispatch' is a made up name, actual function name could be different
+
+
+
+
+
+
+
+
+
 function Connect(props, context) { // In actuality it is 'Class Connect extends Component. inside of 'wrapWithConnect' // returned by connect()()
     _classCallCheck(this, Connect);
     var _this = _possibleConstructorReturn(this, _Component.call(this, props, context));

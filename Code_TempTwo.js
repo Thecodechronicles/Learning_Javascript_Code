@@ -323,3 +323,41 @@ var _createClass = function () {
         return Constructor;
     };
 }();
+
+
+
+
+// react-router 5.2.0 'Route.js' terenary to if else conversion
+if (props.match) {
+    if (children) {
+        if (typeof children === "function") {
+            if (__DEV__) {
+                evalChildrenDev(children, props, this.props.path)
+            } else {
+                children(props)
+            }
+        } else {
+            children
+        }
+    } else {
+        if (component) {
+            React.createElement(component, props)
+        } else {
+            if (render) {
+                render(props)
+            } else {
+                null
+            }
+        }
+    }
+} else {
+    if (typeof children === "function") {
+        if (__DEV__) {
+            evalChildrenDev(children, props, this.props.path)
+        } else {
+            children(props)
+        }
+    } else {
+        null
+    }
+}
